@@ -1,0 +1,28 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "app/**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "app/**/*.js.map": true
+  },
+  // Auto Import configuration
+  // Glob for files to watch and scan, e.g ./src/** ./src/app/**/*.ts. Defaults to **/*.ts
+  "autoimport.filesToScan": "app/**/*.ts",
+  // Specifies wether to show notifications from Auto Import
+  "autoimport.showNotifications": false,
+  // Specifies wether to use double quotes
+  "autoimport.doubleQuotes": false,
+  // Specifies wether to use spaces between first and last brace
+  "autoimport.spaceBetweenBraces": true,
+  // Control whether tslint is enabled for TypeScript files or not.
+  "tslint.enable": true,
+  "editor.formatOnSave": true,
+  "recommendations": [
+    "eg2.tslint"
+  ]
+,
+"typescript.tsdk": "./node_modules/typescript/lib"
+}
