@@ -14,13 +14,13 @@ export class MapComponent {
   @Output()
   viewCreated = new EventEmitter();
 
-  view: MapView;
+  mapView: MapView;
 
   constructor(private mapService: MapService,
     private elementRef: ElementRef) { }
 
   ngOnInit() {
-    this.view = new MapView({
+    this.mapView = new MapView({
       container: this.elementRef.nativeElement.firstChild,
       map: this.mapService.map,
       center: new Point({
@@ -30,6 +30,6 @@ export class MapComponent {
       }),
       zoom: 14
     });
-    this.viewCreated.next(this.view);
+    this.viewCreated.next(this.mapView);
   }
 }

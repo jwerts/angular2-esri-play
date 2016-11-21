@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map.component';
 import { MapService } from './map.service';
 
+import { CoordinateComponent } from './coordinate/coordinate.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { MapService } from './map.service';
   ],
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    CoordinateComponent
   ],
   bootstrap: [
     AppComponent

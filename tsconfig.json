@@ -12,7 +12,6 @@
   },
   "exclude": [
     "node_modules",
-    "bower_components",
     "typings/main",
     "typings/main.d.ts"
   ]

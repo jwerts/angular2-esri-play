@@ -9,8 +9,6 @@
     "watchOptions": {
         "ignored": [
             "node_modules",
-            "bower_components",
-            "_test-output",
             "*.spec.*"
         ]
     }
