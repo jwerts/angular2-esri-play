@@ -7,7 +7,7 @@ import Point = require('esri/geometry/Point');
 @Component({
   selector: 'coordinate',
   template: require('./coordinate.component.html'),
-  styleUrls: ['./app/coordinate/coordinate.component.css']
+  styles: [require('./coordinate.component.css')]
 })
 export class CoordinateComponent implements OnInit, OnDestroy {
   @Input('map-view')

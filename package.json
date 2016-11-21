@@ -55,6 +55,7 @@
     "lodash": "^4.17.2",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
+    "to-string-loader": "^1.1.5",
     "ts-helpers": "^1.1.2",
     "ts-loader": "^1.2.2",
     "tslint": "^4.0.1",
