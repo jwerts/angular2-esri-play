@@ -8,9 +8,9 @@ module.exports = function (config) {
     frameworks: ['jasmine', 'dojo'],
 
     files: [{
-        pattern: 'karma-test-shim.js',
-        included: false
-      },
+      pattern: 'karma-test-shim.js',
+      included: false
+    },
       'test-main.js'
     ],
 
@@ -22,9 +22,9 @@ module.exports = function (config) {
 
     webpackMiddleware: {
       stats: 'errors-only'
-        // stats: {
-        //   colors: true
-        // }
+      // stats: {
+      //   colors: true
+      // }
     },
 
     webpackServer: {
@@ -42,7 +42,7 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     //browsers: ['PhantomJS'],
-    singleRun: true,
+    singleRun: false,
 
     browserNoActivityTimeout: 100000
   };

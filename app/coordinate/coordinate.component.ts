@@ -30,7 +30,9 @@ export class CoordinateComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.mapViewElement.removeEventListener('mousemove', <any>this);
+    if (this.mapViewElement) {
+      this.mapViewElement.removeEventListener('mousemove', <any>this);
+    }
   }
 
   handleEvent(event: Event) {
