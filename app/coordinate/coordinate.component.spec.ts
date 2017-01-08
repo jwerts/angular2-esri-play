@@ -33,7 +33,7 @@ describe('Coordinate', () => {
   it('should update lat/long on mousemove', () => {
     $(mapDivEl).triggerHandler('mousemove', {
       pageX: 0,
-      pageY: 0
+      pageY: 1
     });
     expect(el.querySelector('#longitude').innerHTML).toBe('0');
   });
