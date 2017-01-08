@@ -6,7 +6,4 @@ import '@angular/common';
 import '@angular/http';
 import '@angular/router';
 
-import 'core-js';
-import 'reflect-metadata';
 import 'rxjs';
-import 'zone.js';

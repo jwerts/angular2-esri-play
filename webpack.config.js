@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require("webpack");
+var minimize = process.argv.indexOf('--minimize') !== -1;
 
 // Helper functions
 function root(args) {
@@ -7,9 +8,9 @@ function root(args) {
   return path.join.apply(path, [__dirname].concat(args));
 }
 
-module.exports = {
+config = {
   entry: {
-    //polyfills: './app/polyfills.ts',
+    polyfills: './app/polyfills.ts',
     main: './app/main.ts',
     vendor: './app/vendor.ts'
   },
@@ -65,7 +66,7 @@ module.exports = {
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      name: ['app', 'vendor', 'polyfills'],
       minChunks: Infinity
     })
   ],
@@ -83,3 +84,35 @@ module.exports = {
   ],
   devtool: 'source-map'
 };
+
+if (minimize) {
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    beautify: false, //prod
+    output: {
+      comments: false
+    }, //prod
+    mangle: {
+      except: ['$', 'require'],
+      screw_ie8: true,
+      keep_fnames: true
+    }, //prod
+    compress: {
+      screw_ie8: true,
+      warnings: false,
+      conditionals: true,
+      unused: true,
+      comparisons: true,
+      sequences: true,
+      dead_code: true,
+      evaluate: true,
+      if_return: true,
+      join_vars: true,
+      negate_iife: false // we need this for lazy v8
+    }
+  }));
+  config.htmlLoader = {
+    minimize: false // workaround for ng2
+  }
+}
+
+module.exports = config;
