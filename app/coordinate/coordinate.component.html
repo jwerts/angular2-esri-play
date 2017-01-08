@@ -1,6 +1,6 @@
 <div id="coordContainer">
   <p id="scaleLine">
-    Level: <i>{{mapView.zoom  | number:'.0-0'}}</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Scale: <i>{{mapView.scale | number:'.0-0'}}</i>
+    Level: <i id="zoom">{{mapView.zoom  | number:'.0-0'}}</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Scale: <i id="scale">{{mapView.scale | number:'.0-0'}}</i>
   </p>
   <p id="coordinatesLine">
     Lat: <i id="longitude">{{longitude | number:'.6-6'}}</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lon: <i id="latitude">{{latitude | number:'.6-6'}}</i>

@@ -11,7 +11,7 @@ module.exports = function (config) {
       pattern: 'karma-test-shim.js',
       included: false
     },
-      'test-main.js'
+      'karma-test-main.js'
     ],
 
     preprocessors: {
