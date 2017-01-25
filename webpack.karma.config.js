@@ -8,37 +8,36 @@ function root(args) {
 }
 
 module.exports = {
-  entry: {},
+  devtool: 'source-map',
   output: {
-    filename: './dist/[name].bundle.js',
-    publicPath: './',
+    path: "/",
     libraryTarget: "amd"
   },
   resolve: {
-    extensions: ['', '.ts', '.tsx', '.js', 'json']
+    extensions: ['.ts', '.tsx', '.js', 'json']
   },
   module: {
-    loaders: [
+    rules: [
       // typescript
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader'
-      },
-      // json
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      // html
-      {
-        test: /\.html$/,
-        loader: 'html-loader'
+        use: 'ts-loader'
       },
       // css
       {
         test: /\.css$/,
-        loaders: ["to-string-loader", "css-loader"]
+        use: ["to-string-loader", "css-loader"]
       },
+      // html
+      {
+        test: /\.html$/,
+        use: 'html-loader'
+      },
+      // images
+      {
+        test: /\.(jpe?g|gif|png)$/,
+        use: 'file-loader?emitFile=false&name=[path][name].[ext]'
+      }
     ]
   },
   plugins: [
@@ -62,10 +61,10 @@ module.exports = {
         /^dijit/.test(request) ||
         /^esri/.test(request)
       ) {
+        console.log(context + ": " + request);
         return callback(null, "amd " + request);
       }
       callback();
     }
-  ],
-  devtool: 'source-map'
+  ]
 };
