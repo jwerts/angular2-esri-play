@@ -41,7 +41,6 @@ module.exports = function (config) {
     colors: true,
     autoWatch: true,
     browsers: ['Chrome'],
-    //browsers: ['PhantomJS'],
     singleRun: false,
 
     browserNoActivityTimeout: 100000

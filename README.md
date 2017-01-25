@@ -8,8 +8,9 @@ Angular 2 app w/ Typescript, Webpack and ESRI JSAPI 4.x.  Includes custom coordi
 npm install
 npm start
 
+# Run unit tests
 npm test
 
 # Builds minimized version for production
-npm build
+npm run build
 ```
