@@ -1,4 +1,4 @@
-var webpackConfig = require('./webpack.karma.config');
+var webpackConfig = require('./webpack/webpack.karma.config');
 webpackConfig.devtool = 'inline-source-map';
 
 module.exports = function (config) {
@@ -7,11 +7,36 @@ module.exports = function (config) {
 
     frameworks: ['jasmine', 'dojo'],
 
-    files: [{
-      pattern: 'karma-test-shim.js',
-      included: false
-    },
-      'karma-test-main.js'
+    files: [
+      // asset (HTML & CSS) paths loaded via Angular's component compiler
+      // (these paths need to be rewritten, see proxies section)
+      {
+        pattern: './app/**/*.html',
+        included: false,
+        watched: false
+      }, {
+        pattern: './app/**/*.css',
+        included: false,
+        watched: false
+      },
+
+      // paths for debugging with source maps in dev tools
+      {
+        pattern: './app/**/*.ts',
+        included: false,
+        watched: false
+      },
+
+      {
+        pattern: 'karma-test-main.js',
+        watched: false,
+        included: true
+      },
+      {
+        pattern: 'karma-test-shim.js',
+        included: false,
+        watched: false
+      }
     ],
 
     preprocessors: {

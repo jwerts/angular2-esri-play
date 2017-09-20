@@ -14,10 +14,10 @@ export class CoordinateComponent implements OnInit, OnDestroy {
   mapView: MapView;
   private mapViewElement: HTMLDivElement;
 
-  private _longitude: number = 0;
+  private _longitude = 0;
   get longitude(): number { return this._longitude; }
 
-  private _latitude: number = 0;
+  private _latitude = 0;
   get latitude(): number { return this._latitude; }
 
   constructor() {

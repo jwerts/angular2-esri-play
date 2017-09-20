@@ -14,19 +14,19 @@ window.dojoConfig = {
     location: "/base"
   }, {
     name: "esri",
-    location: "http://js.arcgis.com/4.2/esri"
+    location: "http://js.arcgis.com/4.4/esri"
   }, {
     name: "dojo",
-    location: "http://js.arcgis.com/4.2/dojo"
+    location: "http://js.arcgis.com/4.4/dojo"
   }, {
     name: "dojox",
-    location: "http://js.arcgis.com/4.2/dojox"
+    location: "http://js.arcgis.com/4.4/dojox"
   }, {
     name: "dijit",
-    location: "http://js.arcgis.com/4.2/dijit"
+    location: "http://js.arcgis.com/4.4/dijit"
   }, {
     name: 'moment',
-    location: 'http://js.arcgis.com/4.2/moment',
+    location: 'http://js.arcgis.com/4.4/moment',
     main: 'moment'
   }],
   async: true

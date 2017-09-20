@@ -8,21 +8,20 @@
     },
     "app/**/*.js.map": true
   },
-  // Auto Import configuration
-  // Glob for files to watch and scan, e.g ./src/** ./src/app/**/*.ts. Defaults to **/*.ts
-  "autoimport.filesToScan": "app/**/*.ts",
-  // Specifies wether to show notifications from Auto Import
-  "autoimport.showNotifications": false,
-  // Specifies wether to use double quotes
-  "autoimport.doubleQuotes": false,
-  // Specifies wether to use spaces between first and last brace
-  "autoimport.spaceBetweenBraces": true,
   // Control whether tslint is enabled for TypeScript files or not.
   "tslint.enable": true,
+  // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+  "editor.tabSize": 2,
+  // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+  "editor.insertSpaces": true,
   "editor.formatOnSave": true,
-  "recommendations": [
-    "eg2.tslint"
-  ]
-,
-"typescript.tsdk": "./node_modules/typescript/lib"
+  "editor.formatOnType": true,
+  "vsicons.presets.angular": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/build": true,
+    "**/dist": true
+  }
 }

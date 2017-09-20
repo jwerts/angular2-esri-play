@@ -7,7 +7,7 @@ export class MapService {
   map: Map;
   constructor() {
     this.map = new Map({
-      basemap: 'topo'
+      basemap: <any>'topo-vector'
     });
   }
 }
