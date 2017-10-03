@@ -46,10 +46,12 @@ module.exports = function (config) {
     webpack: webpackConfig,
 
     webpackMiddleware: {
-      stats: 'errors-only'
-      // stats: {
-      //   colors: true
-      // }
+      // stats: 'errors-only'
+      stats: {
+        colors: true
+      },
+      // display no info to console (only warnings and errors)
+      noInfo: false,
     },
 
     webpackServer: {
